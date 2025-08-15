@@ -1,0 +1,2 @@
+- Display the current as a scheduled date on a calendar ("You are here!")
+- Display the target date as a scheduled date on a calendar

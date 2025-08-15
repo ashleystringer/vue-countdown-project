@@ -1,0 +1,9 @@
+- AUGUST 12, 2025 - 
+
+- https://www.geeksforgeeks.org/javascript/how-to-design-a-simple-calendar-using-javascript/ 
+*** Look into best practices for Vue ***
+- - https://www.reddit.com/r/vuejs/comments/1fg0fbp/vuejs_best_practices/ 
+- - https://vuejs.org/style-guide/ 
+
+
+***  Find a way to "renew" the date for the calendar everytime the the date changes in DateDisplay
