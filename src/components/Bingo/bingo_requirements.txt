@@ -1,0 +1,14 @@
+*** Dynamic dimensons
+*** Cards and squares created by user
+*** Ability to randomly generate squares from a pool of possible options
+*** Ability to generate several for a group
+*** Ability to download cards
+*** Ability to customize the backgrounds of the cards
+*** Ability to customize the backgrounds of individual squares
+*** Ability to categorize square backgrounds by tags
+*** Ability to mark individual squares
+*** Ability to create game group
+*** Ability to store bingo cards in a database
+*** Ability to store games in a database
+*** Ability to create user accounts
+*** Preview mode
