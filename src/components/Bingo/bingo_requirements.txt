@@ -1,5 +1,5 @@
-*** Dynamic dimensons
-*** Cards and squares created by user
+*** Dynamic dimensons [X]
+*** Cards and squares created by user [X]
 *** Ability to randomly generate squares from a pool of possible options
 *** Ability to generate several for a group
 *** Ability to download cards

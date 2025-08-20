@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import BingoSquare from './BingoSquare.vue';
 
 const squares = ref([
@@ -20,14 +20,27 @@ const squares = ref([
     ]
 ]);
 
+const props = defineProps({
+    dimensionNumber: Number,
+    cardTitle: String,
+    bingoSquares: [Object]
+});
+
+const cardDimension = ref(3);
+const gridStyle = ref("grid-dim-3x3");
+
+watch(() => props.dimensionNumber, (dimensionNumber) => {
+    console.log(dimensionNumber)
+    cardDimension.value = props.dimensionNumber;
+})
 
 </script>
 
 <template>
-    <div class="bingo-card">
-        <div class="bingo-card-row" v-for="square in squares">
-            <div class="bingo-card-column" v-for="item in square">
-                <BingoSquare :content="item.content"/>
+    <div class="bingo-card" :class="{gridStyle}">
+        <div class="bingo-card-row" v-for="n in cardDimension">
+            <div class="bingo-card-column" v-for="n in cardDimension">
+                <BingoSquare/>
             </div>
         </div>
     </div>
@@ -35,12 +48,21 @@ const squares = ref([
 
 <style scoped>
     .bingo-card{
-        display: flex;
+        display: grid;
+    }
+    .grid-dim-3x3{
+        grid-template-columns: repeat(3, 0fr);
+    }
+    .grid-dim-4x4{
+        grid-template-columns: repeat(4, 0fr);
+    }
+    .grid-dim-5x5{
+        grid-template-columns: repeat(5, 0fr);
     }
     .bingo-card-row {
-        padding: 1px;
+        padding: 0px;
     }
     .bingo-card-column {
-        padding: 1px;
+        padding: 0px;
     }
 </style>

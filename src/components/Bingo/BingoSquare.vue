@@ -11,8 +11,8 @@
 <style scoped>
     .bingo-square{
         border: 1px solid red;
-        height: 55px;
-        width: 55px;
+        height: 65px;
+        width: 65px;
         overflow: scroll;
     }
 </style>
