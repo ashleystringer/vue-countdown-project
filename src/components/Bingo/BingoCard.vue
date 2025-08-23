@@ -1,29 +1,17 @@
 <script setup>
-import { ref, watch } from 'vue';
-import BingoSquare from './BingoSquare.vue';
+/*
+- This will be used for both editing mode and preview mode.
+*/
 
-const squares = ref([
-    [
-        { content: "Square 1"},
-        { content: "Square 2"},
-        { content: "Square 3"},
-    ],
-    [
-        { content: "Square 4"},
-        { content: "Square 5"},
-        { content: "Square 6"},
-    ],
-    [
-        { content: "Square 7"},
-        { content: "Square 8"},
-        { content: "Square 9"},
-    ]
-]);
+import { ref, watch, computed } from 'vue';
+import BingoSquare from './BingoSquare.vue';
 
 const props = defineProps({
     dimensionNumber: Number,
     cardTitle: String,
-    bingoSquares: [Object]
+    bingoSquares: [Object],
+    card: Object,
+    selectedSquare: Object
 });
 
 const cardDimension = ref(3);
@@ -34,10 +22,16 @@ watch(() => props.dimensionNumber, (dimensionNumber) => {
     cardDimension.value = props.dimensionNumber;
 })
 
+const test = computed(() => ({
+    'grid-dim-3x3': props.dimensionNumber === 3,
+    'grid-dim-4x4': props.dimensionNumber === 4,
+    'grid-dim-5x5': props.dimensionNumber === 5
+}));
+
 </script>
 
 <template>
-    <div class="bingo-card" :class="{gridStyle}">
+    <div class="bingo-card" :class="test">
         <div class="bingo-card-row" v-for="n in cardDimension">
             <div class="bingo-card-column" v-for="n in cardDimension">
                 <BingoSquare/>

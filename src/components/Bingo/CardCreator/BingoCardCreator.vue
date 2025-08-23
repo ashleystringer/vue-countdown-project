@@ -1,7 +1,10 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 import BingoCard from '../BingoCard.vue';
+import BingoSquareInput from '../BingoSquareInput.vue';
 
+const card = reactive({});
+const selectedSquare = reactive({});
 /*
 - Three options for dimensions (3 x 3, 4 x 4, 5 x 5) [PRIORITY]
 - Directly edit the empty squares of the empty bingo card [PRIORITY]
@@ -47,14 +50,9 @@ function selectDimension(e){
                 <option value="dim-4x4">4 x 4</option>
                 <option value="dim-5x5">5 x 5</option>
             </select>
-
-            <br/>
-
-            <form>
-                <input :value="text" @input="onInput" placeholder="Type here">
-            </form>
         </div> 
         <div>
+            <BingoSquareInput/>
             <BingoCard :dimensionNumber="dimensionNumber"/>
         </div>      
     </div>

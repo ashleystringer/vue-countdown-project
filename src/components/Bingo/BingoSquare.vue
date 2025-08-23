@@ -2,6 +2,9 @@
     defineProps({
         content: String
     })
+    /*
+        Create editing mode
+    */
 </script>
 
 <template>

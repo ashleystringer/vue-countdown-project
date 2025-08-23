@@ -1,7 +1,7 @@
 *** Dynamic dimensons [X]
 *** Cards and squares created by user [X]
 *** Ability to randomly generate squares from a pool of possible options
-*** Ability to generate several for a group
+*** Ability to generate several cards for a group
 *** Ability to download cards
 *** Ability to customize the backgrounds of the cards
 *** Ability to customize the backgrounds of individual squares
@@ -12,3 +12,16 @@
 *** Ability to store games in a database
 *** Ability to create user accounts
 *** Preview mode
+
+
+- Current task - Add text to the bingo squares
+    - Create an editing mode and a preview mode
+    - Editing mode contains BingoSquareInput and BingoCard
+    - There is a link between the data of BingoSquareInput and BingoCard
+    - There is an object of card data (by dimension) 
+        - as a prop and an emit to BingoSquareInput
+        - as a prop to BingoCard (BingoCard is currently read-only)
+    - There needs to be a selected square. 
+        - It can be selected either in BingoCard (via BingoSquare) or BingoSquareInput.
+        - It can be selected by clicking on an individual BingoSquare.
+        - It can be selected clicking on the orientation buttons in BingoSquareInput.
